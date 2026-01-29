@@ -9,4 +9,4 @@ const QuoteSchema = new mongoose.Schema({
     source: String
 
 });
-module.exports = mongoose.model('Quote', quoteSchema);
+module.exports = mongoose.model('Quote', QuoteSchema);
