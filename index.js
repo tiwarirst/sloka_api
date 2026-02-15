@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize');
 const compression = require('compression');
 const Quote = require('./models/Quotes');
 
@@ -72,9 +71,6 @@ app.use(cors(corsOptions));
 // Body parser with size limit
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
-
-// Data sanitization against NoSQL injection
-app.use(mongoSanitize());
 
 // Compression for better performance
 app.use(compression());
