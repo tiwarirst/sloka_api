@@ -1,18 +1,41 @@
 {
-  "name": "sloka_api",
+  "name": "sloka-api",
   "version": "1.0.0",
+  "description": "A secure REST API serving ancient Sanskrit slokas (verses) with translations and transliterations",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": ">=18.0.0"
   },
-  "keywords": [],
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node scripts/seed.js"
+  },
+  "keywords": [
+    "sloka",
+    "api",
+    "sanskrit",
+    "bhagavad-gita",
+    "quotes",
+    "wisdom",
+    "hindu",
+    "vedas",
+    "upanishads"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
   "dependencies": {
+    "compression": "^1.8.1",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^7.2.0",
     "mongoose": "^9.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
